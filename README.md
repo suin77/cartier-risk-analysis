@@ -8,10 +8,19 @@
 - 데이터: 시크먼트 게시글 11,969개
 
 ## 담당 역할
-팀 프로젝트 이후 단독으로 고도화 진행
 
-- 팀 프로젝트: 1차 까르띠에 게시글 필터링 (키워드/N-gram 기반)
-- **본인 담당**: 이후 전 과정 단독 고도화
+**팀 프로젝트**
+- 프로젝트 기획 및 주제 선정 (리스크 분석 프레임워크, BERT 방법론 선정)
+- 댓글 리스크 탐지 모델(KcBERT) 구축 및 성능 최적화
+- Risk Score × Exposure Score 기반 9등급 매트릭스 설계
+- Tableau 대시보드 제작
+- 데이터 기반 인사이트 도출 및 대응 전략 제안 · 최종 발표
+
+**단독 고도화** (팀 결과 한계 확인 후 진행)
+- Active Learning 기반 BERT 브랜드 분류 모델 재학습
+- 리스크 이진 분류 파이프라인 재설계 (Precision 8.6%p 향상)
+- Rule-based + BERTopic 리스크 카테고리 분류
+- Figma 기반 대시보드 레이아웃 설계 + Tableau 대시보드 고도화
 
 ## 주요 작업 내용
 
@@ -22,26 +31,32 @@
 ### 2. 리스크 이진 분류
 - 게시글/댓글 각각 BERT 모델로 분류
 - Precision 향상을 목표로 Threshold 최적화
+- 게시글 Precision +8.6%p 향상
 
 ### 3. 리스크 카테고리 분류
 - Rule-based 대분류 (품질/운영/평판/정책)
 - BERTopic 세부 분류 (응대불만, 웨이팅, 기스우려 등 8개 토픽)
 
-### 4. 리스크 지표 설계
+### 4. 리스크 지표 설계 및 9등급 분류
 - Risk Score = (0.5 × 리스크확률) + (0.3 × 감성강도) + (0.2 × 키워드점수)
 - Exposure Score = 리스크댓글비율 + 좋아요수 + 조회수
-
-### 5. 9등급 리스크 매트릭스 및 대시보드
 - Risk Score × Exposure Score 기반 HH~LL 9등급 분류
 - 전체 1,589개 중 집중 모니터링 대상 404개로 압축 → 운영 효율 4배 향상
 
+### 5. 인사이트 및 대시보드
+- Topic Evolution으로 가격 인상 전후 리스크 토픽 변화 분석
+- Figma 기반 대시보드 레이아웃 설계 + Tableau 대시보드 2종 제작
+
 ## 사용 기술
-Python / pandas / BERT (klue/bert-base) / BERTopic / Active Learning
-/ Matplotlib / Seaborn
+Python / pandas / BERT (klue/bert-base, KcBERT) / BERTopic / Active Learning
+/ Matplotlib / Seaborn / Tableau / Figma
 
 ## 파일 구조
-├── 01_bert_brand_classification.ipynb   # BERT 브랜드 분류 고도화
-├── 02_risk_binary_classification.ipynb  # 리스크 이진 분류
-├── 03_risk_category_bertopic.ipynb      # 카테고리 분류
-├── 04_risk_score_matrix.ipynb           # 리스크 지표 및 9등급 분류
-└── README.md
+├── 이진분류(고도화).ipynb       # 리스크 이진 분류 고도화
+├── 댓글모델만들기.ipynb         # 댓글 리스크 탐지 모델
+├── rule_based+bertopic.ipynb   # 리스크 카테고리 분류
+└── topic_evolution.ipynb       # 인사이트 및 Topic Evolution
+
+## 참고
+- 원본 데이터는 개인정보 보호로 미포함
+- 1차 까르띠에 게시글 필터링은 팀 프로젝트 결과물 활용
