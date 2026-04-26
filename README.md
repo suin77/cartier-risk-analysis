@@ -48,11 +48,11 @@
 - Figma 기반 대시보드 레이아웃 설계 + Tableau 대시보드 2종 제작
 
 ## 사용 기술
-Python / pandas / BERT (klue/bert-base, KcBERT) / BERTopic / Active Learning
+Python / pandas / BERT (KcBERT) / BERTopic / Active Learning
 / Matplotlib / Seaborn / Tableau / Figma
 
 ## 파일 구조
-├── 이진분류(고도화).ipynb       # 리스크 이진 분류 고도화
+├── 이진분류_고도화.ipynb       # 게시글 리스크 이진 분류 고도화
 ├── 댓글모델만들기.ipynb         # 댓글 리스크 탐지 모델
 ├── rule_based+bertopic.ipynb   # 리스크 카테고리 분류
 └── topic_evolution.ipynb       # 인사이트 및 Topic Evolution
