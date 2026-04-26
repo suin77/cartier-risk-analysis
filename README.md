@@ -1,4 +1,4 @@
-# VOC 기반 Cartier 리스크 분석 및 조기징후 탐색
+# VOC 기반 Cartier 리스크 탐지 · 확산 모니터링 시스템 구축
 
 ## 프로젝트 개요
 네이버 명품 커뮤니티 '시크먼트'의 까르띠에 관련 게시글을 분석하여
@@ -52,11 +52,13 @@ Python / pandas / BERT (KcBERT) / BERTopic / Active Learning
 / Matplotlib / Seaborn / Tableau / Figma
 
 ## 파일 구조
-├── 이진분류_고도화.ipynb       # 게시글 리스크 이진 분류 고도화
-├── 댓글모델만들기.ipynb         # 댓글 리스크 탐지 모델
-├── rule_based+bertopic.ipynb   # 리스크 카테고리 분류
-└── topic_evolution.ipynb       # 인사이트 및 Topic Evolution
+├── 이진분류_고도화.ipynb       # KcBERT 파인튜닝, Active Learning, Threshold 최적화
+├── 댓글모델만들기.ipynb         # KcBERT 파인튜닝, Threshold 최적화 
+├── rule_based+bertopic.ipynb   # Rule-based 대분류 + BERTopic 세부 토픽 분류
+└── topic_evolution.ipynb       # 월별 토픽 변화 시각화, 인사이트 도출
 
 ## 참고
-- 원본 데이터는 개인정보 보호로 미포함
-- 1차 까르띠에 게시글 필터링은 팀 프로젝트 결과물 활용
+- 원본 데이터는 보안상 미포함
+- 브랜드 필터링(1차 까르띠에 게시글 추출) 및 Risk/Exposure Score 계산은
+  팀 프로젝트 결과물 기반
+- 게시글·댓글 리스크 이진분류 모델은 단독 고도화 작업
