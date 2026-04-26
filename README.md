@@ -52,10 +52,12 @@ Python / pandas / BERT (KcBERT) / BERTopic / Active Learning
 / Matplotlib / Seaborn / Tableau / Figma
 
 ## 파일 구조
-├── 게시글_리스크_이진분류.ipynb # KcBERT 파인튜닝, Active Learning, Threshold 최적화
-├── 댓글_리스크_이진분류.ipynb   # KcBERT 파인튜닝, Threshold 최적화 
-├── 리스크_카테고리_분.ipynb   # Rule-based 대분류 + BERTopic 세부 토픽 분류
-└── topic_evolution.ipynb       # 월별 토픽 변화 시각화, 인사이트 도출
+```
+├── 게시글_리스크_이진분류.ipynb   # KcBERT 파인튜닝, Active Learning, Threshold 최적화
+├── 댓글_리스크_이진분류.ipynb     # KcBERT 파인튜닝, Threshold 최적화
+├── 리스크_카테고리_분류.ipynb     # Rule-based 대분류 + BERTopic 세부 토픽 분류
+└── topic_evolution.ipynb          # 월별 토픽 변화 시각화, 인사이트 도출
+```
 
 ## 참고
 - 원본 데이터는 보안상 미포함
